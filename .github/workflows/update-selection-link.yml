@@ -1,0 +1,48 @@
+name: Update SelectionSorting link
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'homework/**'
+
+permissions:
+  contents: write
+
+jobs:
+  update-link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Point README link at the latest homework file
+        run: |
+          latest=""
+          latest_ts=0
+          while IFS= read -r f; do
+            ts=$(git log -1 --format=%ct -- "$f")
+            if [ "$ts" -gt "$latest_ts" ]; then
+              latest_ts=$ts
+              latest=$f
+            fi
+          done < <(git ls-files homework)
+
+          if [ -z "$latest" ]; then
+            echo "No files under homework/, nothing to link."
+            exit 0
+          fi
+
+          echo "Latest homework file: $latest"
+          perl -0pi -e "s{\[SelectionSorting\]\([^)]*\)}{[SelectionSorting](./$latest)}" README.md
+
+          if ! git diff --quiet -- README.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: point SelectionSorting link to latest homework ($latest)"
+            git push
+          else
+            echo "README already up to date."
+          fi
