@@ -7,7 +7,7 @@
 | Homework 1 | Selection, Bubble, Insertion, Merge, Quick, Heap Sort | [hw1_sorting](./homework/hw1_sorting) | [스크린샷](#homework-1-sorting) |
 | Homework 2 | Sorting Animation | [SortingAnimation.pde](./homework/hw2_sorting_animation/SortingAnimation/SortingAnimation.pde) | [YouTube](https://youtu.be/IPcKI3-0LUg) |
 | Homework 3 | Binary Search Tree (insert, delete, search, inorder·preorder·postorder) | [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde) | [YouTube](https://youtu.be/h1nlurgHODQ) |
-| 8장 실습 | 동적 프로그래밍: 피보나치 수, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
+| 8장 실습 | 동적 프로그래밍: 피보나치 수, 행렬 경로, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
 
 ## Homework 1: Sorting
 
@@ -64,7 +64,7 @@
 
 ## 8장 동적 프로그래밍
 
-피보나치 수와 조약돌 놓기 문제를 Processing으로 풀었습니다. 스크린샷은 코드와 Processing 4.5.7에서 실제로 실행한 결과이며, 스크린샷을 클릭하면 코드 파일로 이동합니다.
+피보나치 수, 행렬 경로, 조약돌 놓기 문제를 Processing으로 풀었습니다. 스크린샷은 코드와 Processing 4.5.7에서 실제로 실행한 결과이며, 스크린샷을 클릭하면 코드 파일로 이동합니다.
 
 ### 피보나치 수
 
@@ -75,6 +75,12 @@
 두 번째 버전은 이웃한 두 수의 비(c / b)도 함께 출력합니다. 반복할수록 이 값은 황금비(약 1.618)에 가까워집니다.
 
 <a href="./homework/ch08_dynamic_programming/FibonacciRatio/FibonacciRatio.pde"><img src="./images/ch08/FibonacciRatio.webp" width="640" alt="피보나치 수와 이웃한 두 수의 비 출력 결과"></a>
+
+### 행렬 경로
+
+3×3 행렬의 각 칸에 0~9 난수를 넣고, 왼쪽 위 칸에서 오른쪽 아래 칸까지 오른쪽이나 아래로만 움직일 때 지나는 칸의 합 중 최솟값을 구합니다. `matrixPath(i, j)`는 (i, j) 칸까지 오는 최소 합이며, 위 칸 `matrixPath(i-1, j)`와 왼쪽 칸 `matrixPath(i, j-1)` 중 작은 값에 이번 칸의 값을 더해 구합니다. 결과를 저장하지 않는 재귀 버전이라 같은 칸을 여러 번 다시 계산합니다. 스크린샷의 행렬에서는 9 → 2 → 2 → 6 → 1 경로의 합 20이 최솟값입니다.
+
+<a href="./homework/ch08_dynamic_programming/MatrixPath/MatrixPath.pde"><img src="./images/ch08/MatrixPath.webp" width="640" alt="행렬 경로 코드와 실행 결과"></a>
 
 ### 조약돌 놓기
 
