@@ -7,6 +7,7 @@
 | Homework 1 | Selection, Bubble, Insertion, Merge, Quick, Heap Sort | [hw1_sorting](./homework/hw1_sorting) | [스크린샷](#homework-1-sorting) |
 | Homework 2 | Sorting Animation | [SortingAnimation.pde](./homework/hw2_sorting_animation/SortingAnimation/SortingAnimation.pde) | [YouTube](https://youtu.be/IPcKI3-0LUg) |
 | Homework 3 | Binary Search Tree (insert, delete, search, inorder·preorder·postorder) | [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde) | [YouTube](https://youtu.be/h1nlurgHODQ) |
+| 8장 실습 | 동적 프로그래밍: 피보나치 수, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
 
 ## Homework 1: Sorting
 
@@ -60,6 +61,26 @@
 [![BST Animation 영상](https://img.youtube.com/vi/h1nlurgHODQ/hqdefault.jpg)](https://youtu.be/h1nlurgHODQ)
 
 코드: [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde)
+
+## 8장 동적 프로그래밍
+
+피보나치 수와 조약돌 놓기 문제를 Processing으로 풀었습니다. 스크린샷은 코드와 Processing 4.5.7에서 실제로 실행한 결과이며, 스크린샷을 클릭하면 코드 파일로 이동합니다.
+
+### 피보나치 수
+
+앞의 두 수를 더해 다음 수를 구하는 과정을 10번 반복합니다. 이미 구한 두 값만 저장해 두고 다시 쓰기 때문에 재귀 호출처럼 같은 값을 여러 번 계산하지 않습니다.
+
+<a href="./homework/ch08_dynamic_programming/Fibonacci/Fibonacci.pde"><img src="./images/ch08/Fibonacci.webp" width="640" alt="피보나치 수 코드와 실행 결과"></a>
+
+두 번째 버전은 이웃한 두 수의 비(c / b)도 함께 출력합니다. 반복할수록 이 값은 황금비(약 1.618)에 가까워집니다.
+
+<a href="./homework/ch08_dynamic_programming/FibonacciRatio/FibonacciRatio.pde"><img src="./images/ch08/FibonacciRatio.webp" width="640" alt="피보나치 수와 이웃한 두 수의 비 출력 결과"></a>
+
+### 조약돌 놓기
+
+3×n 테이블의 각 칸에 -9~9 난수를 넣고, 가로나 세로로 붙은 두 칸에 동시에 놓지 않으면서 열마다 적어도 하나씩 조약돌을 놓아 점수 합을 최대로 만드는 문제입니다. 교재의 `pebbleSum(n)` 의사코드를 그대로 옮겼습니다. `peb[i][p]`는 i열을 패턴 p(1: 위, 2: 가운데, 3: 아래, 4: 위+아래)로 놓았을 때 i열까지의 최대 점수 합이고, 바로 앞 열에서 양립하는 패턴의 값 중 가장 큰 것에 이번 열의 점수를 더해 구합니다. 실행하면 입력 테이블, `peb` 테이블, 답 순서로 출력하며 시간 복잡도는 O(n)입니다.
+
+<a href="./homework/ch08_dynamic_programming/PebbleSum/PebbleSum.pde"><img src="./images/ch08/PebbleSum.webp" width="640" alt="조약돌 놓기 코드와 실행 결과"></a>
 
 ## 수업 실습
 
