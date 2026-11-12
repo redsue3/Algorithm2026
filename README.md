@@ -8,6 +8,9 @@
 | Homework 2 | Sorting Animation | [SortingAnimation.pde](./homework/hw2_sorting_animation/SortingAnimation/SortingAnimation.pde) | [YouTube](https://youtu.be/IPcKI3-0LUg) |
 | Homework 3 | Binary Search Tree (insert, delete, search, inorder·preorder·postorder) | [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde) | [YouTube](https://youtu.be/h1nlurgHODQ) |
 | 8장 실습 | 동적 프로그래밍: 피보나치 수, 행렬 경로, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
+| 그래프 실습 | DFS, BFS | [graph_search](./homework/graph_search) | [스크린샷](#그래프-탐색-실습) |
+| 숙제 (Breadth-First Search) | 너비 우선 탐색 | [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>) | [실행 결과](#숙제-breadth-first-search) |
+| 숙제 (Depth-First Search) | 깊이 우선 탐색 | [DepthFirstSearch.pde](<./homework/숙제 (Depth-First Search)/DepthFirstSearch/DepthFirstSearch.pde>) | [실행 결과](#숙제-depth-first-search) |
 
 ## Homework 1: Sorting
 
@@ -87,6 +90,46 @@
 3×n 테이블의 각 칸에 -9~9 난수를 넣고, 가로나 세로로 붙은 두 칸에 동시에 놓지 않으면서 열마다 적어도 하나씩 조약돌을 놓아 점수 합을 최대로 만드는 문제입니다. 교재의 `pebbleSum(n)` 의사코드를 그대로 옮겼습니다. `peb[i][p]`는 i열을 패턴 p(1: 위, 2: 가운데, 3: 아래, 4: 위+아래)로 놓았을 때 i열까지의 최대 점수 합이고, 바로 앞 열에서 양립하는 패턴의 값 중 가장 큰 것에 이번 열의 점수를 더해 구합니다. 실행하면 입력 테이블, `peb` 테이블, 답 순서로 출력하며 시간 복잡도는 O(n)입니다.
 
 <a href="./homework/ch08_dynamic_programming/PebbleSum/PebbleSum.pde"><img src="./images/ch08/PebbleSum.webp" width="640" alt="조약돌 놓기 코드와 실행 결과"></a>
+
+## 그래프 탐색 실습
+
+정점 8개, 간선 9개인 무방향 그래프를 1번 정점부터 번호가 작은 이웃 먼저 DFS와 BFS로 탐색합니다. 주황색 선은 탐색 트리 간선, `#k`는 방문 순서, 빨간 정점은 마지막에 방문한 정점입니다. BFS는 큐에 넣을 때 `visited[v]`를 YES로 바꿉니다(강의 자료 19쪽 정정). 스크린샷을 클릭하면 코드 파일로 이동합니다.
+
+### DFS
+
+방문 순서: 1 -> 2 -> 7 -> 6 -> 8 -> 3 -> 4 -> 5
+
+<a href="./homework/graph_search/DFS/DFS.pde"><img src="./images/graph/DFS.png" width="640" alt="DFS 코드와 실행 결과"></a>
+
+### BFS
+
+방문 순서: 1 -> 2 -> 3 -> 8 -> 7 -> 4 -> 5 -> 6
+
+<a href="./homework/graph_search/BFS/BFS.pde"><img src="./images/graph/BFS.png" width="640" alt="BFS 코드와 실행 결과"></a>
+
+## 숙제 (Breadth-First Search)
+
+참고: [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/)
+
+정점 5개, 간선 (1,2), (1,0), (2,0), (2,3), (2,4)로 인접 리스트를 만들고 0번 정점부터 큐로 탐색합니다. 이웃은 큐에 넣을 때 방문 표시를 하고, 큐에서 꺼낸 순서대로 결과에 넣습니다. 시간 복잡도는 O(V + E)입니다.
+
+코드: [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>)
+
+```
+0 1 2 3 4
+```
+
+## 숙제 (Depth-First Search)
+
+참고: [Depth First Search or DFS for a Graph](https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/)
+
+같은 그래프를 0번 정점부터 재귀로 탐색합니다. 정점에 들어가면 방문 표시를 하고 결과에 넣은 뒤, 방문하지 않은 이웃으로 내려갑니다. 시간 복잡도는 O(V + E)입니다.
+
+코드: [DepthFirstSearch.pde](<./homework/숙제 (Depth-First Search)/DepthFirstSearch/DepthFirstSearch.pde>)
+
+```
+0 1 2 3 4
+```
 
 ## 수업 실습
 
