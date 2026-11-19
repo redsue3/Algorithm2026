@@ -11,7 +11,7 @@
 | 그래프 실습 | DFS, BFS | [graph_search](./homework/graph_search) | [스크린샷](#그래프-탐색-실습) |
 | 숙제 (Breadth-First Search) | 너비 우선 탐색 | [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>) | [실행 결과](#숙제-breadth-first-search) |
 | 숙제 (Depth-First Search) | 깊이 우선 탐색 | [DepthFirstSearch.pde](<./homework/숙제 (Depth-First Search)/DepthFirstSearch/DepthFirstSearch.pde>) | [실행 결과](#숙제-depth-first-search) |
-| 숙제 (Minimum Spanning Tree) | 최소 신장 트리 (프림 알고리즘) | [MinimumSpanningTree.pde](<./homework/숙제 (Minimum Spanning Tree)/MinimumSpanningTree/MinimumSpanningTree.pde>) | [실행 결과](#숙제-minimum-spanning-tree) |
+| 숙제 (Minimum Spanning Tree) | 최소 신장 트리 (프림 알고리즘) | [MinimumSpanningTree.pde](<./homework/숙제 (Minimum Spanning Tree)/MinimumSpanningTree/MinimumSpanningTree.pde>) | [실행 화면](#숙제-minimum-spanning-tree) |
 
 ## Homework 1: Sorting
 
@@ -134,15 +134,15 @@
 
 ## 숙제 (Minimum Spanning Tree)
 
-참고: [MST(Minimum Spanning Tree) - 1. 프림 알고리즘](https://lotuslee.tistory.com/46)
+참고: [MST(Minimum Spanning Tree) - 1. 프림 알고리즘](https://lotuslee.tistory.com/46), [최소 신장 트리(MST, Minimum Spanning Tree)란](https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html)
 
-그래프의 모든 정점을 사이클 없이 연결하는 트리 중 간선 가중치 합이 가장 작은 트리(최소 신장 트리)를 프림 알고리즘으로 구합니다. 참고 글의 예제 그래프(정점 6개, 간선 1-2:10, 1-3:4, 2-3:2, 2-4:5, 3-4:16, 3-5:7, 4-5:8, 4-6:12, 5-6:23)를 인접 리스트로 만들고 1번 정점부터 시작합니다. 우선순위 큐에서 비용이 가장 작은 정점을 꺼내 이미 방문했으면 건너뛰고, 처음이면 방문 표시를 한 뒤 그 비용을 합에 더하고 방문하지 않은 이웃을 큐에 넣습니다. 선택되는 간선은 1-3(4), 3-2(2), 2-4(5), 3-5(7), 4-6(12)이고 합은 30입니다. 시간 복잡도는 O(E log V)입니다.
+그래프의 모든 정점을 사이클 없이 연결하는 트리 중 간선 가중치 합이 가장 작은 트리(최소 신장 트리)를 프림 알고리즘으로 구하고 화면에 그립니다. 정점이 n개이면 MST의 간선은 n-1개입니다. 참고 글의 예제 그래프(정점 6개, 간선 1-2:10, 1-3:4, 2-3:2, 2-4:5, 3-4:16, 3-5:7, 4-5:8, 4-6:12, 5-6:23)를 인접 리스트로 만들고 1번 정점부터 시작합니다. 우선순위 큐에서 비용이 가장 작은 정점을 꺼내 이미 방문했으면 건너뛰고, 처음이면 방문 표시를 한 뒤 그 비용을 합에 더하고 방문하지 않은 이웃을 큐에 넣습니다. 큐에 넣는 항목에 출발 정점도 함께 저장해 두었다가, 정점이 MST에 들어갈 때 어느 간선으로 이어졌는지 기록합니다. 시간 복잡도는 O(E log V)입니다.
+
+화면에서 회색 선은 그래프의 전체 간선, 주황색 선은 MST에 선택된 간선입니다. 정점 옆의 #k는 MST에 들어간 순서입니다. 선택되는 간선은 1-3(4), 3-2(2), 2-4(5), 3-5(7), 4-6(12)이고 합은 30입니다.
+
+<a href="./homework/숙제%20(Minimum%20Spanning%20Tree)/MinimumSpanningTree/MinimumSpanningTree.pde"><img src="./images/mst/MinimumSpanningTree.png" width="640" alt="프림 알고리즘으로 구한 최소 신장 트리"></a>
 
 코드: [MinimumSpanningTree.pde](<./homework/숙제 (Minimum Spanning Tree)/MinimumSpanningTree/MinimumSpanningTree.pde>)
-
-```
-30
-```
 
 ## 수업 실습
 
