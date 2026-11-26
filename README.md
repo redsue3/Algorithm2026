@@ -7,6 +7,8 @@
 | Homework 1 | Selection, Bubble, Insertion, Merge, Quick, Heap Sort | [hw1_sorting](./homework/hw1_sorting) | [스크린샷](#homework-1-sorting) |
 | Homework 2 | Sorting Animation | [SortingAnimation.pde](./homework/hw2_sorting_animation/SortingAnimation/SortingAnimation.pde) | [YouTube](https://youtu.be/IPcKI3-0LUg) |
 | Homework 3 | Binary Search Tree (insert, delete, search, inorder·preorder·postorder) | [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde) | [YouTube](https://youtu.be/h1nlurgHODQ) |
+| Homework 4 | Infix to Postfix Calculator: 스택으로 중위 표기식을 후위 표기식으로 바꾸고 계산 | [InfixToPostfix.pde](<./homework/숙제 (Infix to Postfix Calculator)/InfixToPostfix/InfixToPostfix.pde>) | [실행 화면](#homework-4-infix-to-postfix-calculator) |
+| Homework 5 | Pebble Placement Problem: 조약돌 놓기 (동적 프로그래밍) | [PebblePlacement.pde](<./homework/숙제 (Pebble Placement Problem)/PebblePlacement/PebblePlacement.pde>) | [실행 화면](#homework-5-pebble-placement-problem) |
 | 8장 실습 | 동적 프로그래밍: 피보나치 수, 행렬 경로, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
 | 그래프 실습 | DFS, BFS | [graph_search](./homework/graph_search) | [스크린샷](#그래프-탐색-실습) |
 | Homework 6 | BFS and DFS for a graph: 너비 우선 탐색 (Breadth-First Search) | [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>) | [실행 결과](#homework-6-breadth-first-search) |
@@ -65,6 +67,26 @@
 [![BST Animation 영상](https://img.youtube.com/vi/h1nlurgHODQ/hqdefault.jpg)](https://youtu.be/h1nlurgHODQ)
 
 코드: [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde)
+
+## Homework 4: Infix to Postfix Calculator
+
+참고: [Convert Infix expression to Postfix expression](https://www.geeksforgeeks.org/dsa/convert-infix-expression-to-postfix-expression/), [Infix to Postfix in Java](https://infixtopostfixconverter.com/infix-to-postfix-java/)
+
+중위 표기식을 스택으로 후위 표기식으로 바꾼 뒤, 그 후위 표기식을 다시 스택으로 계산합니다. 숫자는 바로 출력하고 `(`는 스택에 넣으며, `)`를 만나면 `(`가 나올 때까지 연산자를 꺼냅니다. 연산자를 만나면 스택 위의 연산자가 우선순위(`^` > `*`, `/` > `+`, `-`)가 더 높거나, 같으면서 왼쪽부터 계산하는 연산자일 때 먼저 꺼낸 뒤 넣습니다. `^`는 오른쪽부터 계산하므로 `2 ^ 3 ^ 2`는 512가 됩니다. 계산할 때는 숫자를 스택에 넣다가 연산자를 만나면 두 수를 꺼내 계산하고 결과를 다시 넣습니다. 예제 식 6개의 결과는 차례로 14, 20, 512, 10, 3.5, 53입니다.
+
+<a href="./homework/숙제%20(Infix%20to%20Postfix%20Calculator)/InfixToPostfix/InfixToPostfix.pde"><img src="./images/hw4/InfixToPostfix.webp" width="640" alt="중위 표기식을 후위 표기식으로 바꿔 계산한 코드와 실행 결과"></a>
+
+코드: [InfixToPostfix.pde](<./homework/숙제 (Infix to Postfix Calculator)/InfixToPostfix/InfixToPostfix.pde>)
+
+## Homework 5: Pebble Placement Problem
+
+참고: [조약돌 문제](https://breath-in317.tistory.com/entry/Dynamic-Programming-%EC%A1%B0%EC%95%BD%EB%8F%8C-%EB%AC%B8%EC%A0%9C), [Pebble Placement Problem](https://dad-rock.tistory.com/623)
+
+3×N 테이블에서 가로나 세로로 붙은 두 칸에 동시에 놓지 않으면서 열마다 적어도 하나씩 조약돌을 놓아, 조약돌이 놓인 칸의 합을 최대로 만드는 문제입니다. 한 열에 놓는 모양은 패턴 1(위), 패턴 2(가운데), 패턴 3(아래), 패턴 4(위와 아래) 네 가지입니다. 바로 앞 열과 이어질 수 있는 패턴은 패턴 1이 2와 3, 패턴 2가 1과 3과 4, 패턴 3이 1과 2, 패턴 4가 2뿐입니다. `DP[p][i]`는 i열을 패턴 p+1로 놓았을 때 i열까지의 최대 합이고, 앞 열에서 이어질 수 있는 패턴의 DP 값 중 가장 큰 것에 이번 열의 점수를 더해 구합니다. 참고 글의 3×8 예제 표를 넣었고 최대 합은 106입니다. 시간 복잡도는 O(n)입니다.
+
+<a href="./homework/숙제%20(Pebble%20Placement%20Problem)/PebblePlacement/PebblePlacement.pde"><img src="./images/hw5/PebblePlacement.webp" width="640" alt="조약돌 놓기 코드와 실행 결과"></a>
+
+코드: [PebblePlacement.pde](<./homework/숙제 (Pebble Placement Problem)/PebblePlacement/PebblePlacement.pde>)
 
 ## 8장 동적 프로그래밍
 
