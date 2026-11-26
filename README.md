@@ -9,8 +9,8 @@
 | Homework 3 | Binary Search Tree (insert, delete, search, inorder·preorder·postorder) | [BSTAnimation.pde](./homework/hw3_bst/BSTAnimation/BSTAnimation.pde) | [YouTube](https://youtu.be/h1nlurgHODQ) |
 | 8장 실습 | 동적 프로그래밍: 피보나치 수, 행렬 경로, 조약돌 놓기 | [ch08_dynamic_programming](./homework/ch08_dynamic_programming) | [스크린샷](#8장-동적-프로그래밍) |
 | 그래프 실습 | DFS, BFS | [graph_search](./homework/graph_search) | [스크린샷](#그래프-탐색-실습) |
-| 숙제 (Breadth-First Search) | 너비 우선 탐색 | [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>) | [실행 결과](#숙제-breadth-first-search) |
-| 숙제 (Depth-First Search) | 깊이 우선 탐색 | [DepthFirstSearch.pde](<./homework/숙제 (Depth-First Search)/DepthFirstSearch/DepthFirstSearch.pde>) | [실행 결과](#숙제-depth-first-search) |
+| Homework 6 | BFS and DFS for a graph: 너비 우선 탐색 (Breadth-First Search) | [BreadthFirstSearch.pde](<./homework/숙제 (Breadth-First Search)/BreadthFirstSearch/BreadthFirstSearch.pde>) | [실행 결과](#homework-6-breadth-first-search) |
+| Homework 6 | BFS and DFS for a graph: 깊이 우선 탐색 (Depth-First Search) | [DepthFirstSearch.pde](<./homework/숙제 (Depth-First Search)/DepthFirstSearch/DepthFirstSearch.pde>) | [실행 결과](#homework-6-depth-first-search) |
 | 숙제 (Minimum Spanning Tree) | 최소 신장 트리 (프림 알고리즘) | [MinimumSpanningTree.pde](<./homework/숙제 (Minimum Spanning Tree)/MinimumSpanningTree/MinimumSpanningTree.pde>) | [실행 화면](#숙제-minimum-spanning-tree) |
 
 ## Homework 1: Sorting
@@ -108,7 +108,7 @@
 
 <a href="./homework/graph_search/BFS/BFS.pde"><img src="./images/graph/BFS.png" width="640" alt="BFS 코드와 실행 결과"></a>
 
-## 숙제 (Breadth-First Search)
+## Homework 6: Breadth-First Search
 
 참고: [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/)
 
@@ -120,7 +120,7 @@
 0 1 2 3 4
 ```
 
-## 숙제 (Depth-First Search)
+## Homework 6: Depth-First Search
 
 참고: [Depth First Search or DFS for a Graph](https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/)
 
